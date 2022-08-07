@@ -27,10 +27,11 @@ const readCsv = () => {
   results.forEach((result) => {
     const data = result.split(",");
     const result_id = parseInt(data[0]);
+    const player = data[1];
     const matches_won = parseInt(data[3]);
     const outcome = data[4]?.replace("\r", "");
-    const arr = [result_id, data[1], data[2], matches_won, outcome];
-    data[0] !== "" && data[1] !== "Player" && dataArr.push(arr);
+    const arr = [result_id, player, data[2], matches_won, outcome];
+    data[0] !== "" && player !== "Player" && dataArr.push(arr);
   });
   return dataArr;
 };
